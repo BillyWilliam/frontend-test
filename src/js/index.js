@@ -1,3 +1,10 @@
-{
-	console && console.log('%c careers@stormid.com ', 'background: #272727; color: #ffffff');
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../components/app.jsx';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);

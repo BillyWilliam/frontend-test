@@ -7,11 +7,11 @@ const pkg = require('./package.json')
 module.exports = {
 	entry: './src/js/index.js',
   	output: {
-		filename: 'index.js',
+		filename: 'index.bundle.js',
 		path: path.resolve(__dirname, './build')
   	},
 	stats: {
-		modules: false,
+		modules: true,
 		entrypoints: false
 	},
   	plugins: [
@@ -33,7 +33,7 @@ module.exports = {
             ]
         },
         {
-			test: /\.js$/,
+			test: /\.(js|jsx)$/,
 			exclude: /(node_modules|bower_components)/,
 			use: {
 		  		loader: 'babel-loader',

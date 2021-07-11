@@ -37,12 +37,11 @@ module.exports = function (api) {
                         exclude: ['transform-regenerator', 'transform-async-to-generator'],
                     }
                 )
-            ]
+            ],
+            '@babel/preset-react',
         ],
         plugins: [
-            ['@babel/plugin-transform-react-jsx', {
-                pragma: 'h'
-            }],
+            '@babel/plugin-transform-react-jsx',
             '@babel/plugin-syntax-dynamic-import',
             '@babel/plugin-transform-object-assign',
             '@babel/plugin-proposal-object-rest-spread',
