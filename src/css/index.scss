@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + span {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+  margin: -1px 0px 0 0;
+  vertical-align: middle;
+  background: white left top no-repeat;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-right: 4px;
+
+  &:after {
+    content: none;
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input[type="checkbox"]:checked + span {
+
+  &:after {
+    content: '';
+  }
+}
+
+.Tasks {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 750px;
+
+  .Task {
+
+    &__checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      border: 1px solid black;
+      width: 24px;
+      height: 24px;
+
+      img {
+        width: 14px;
+        height: 14px;
+        display: none;
+      }
+    }
+
+    &__list {
+      padding: 0;
+      margin: 16px 0;
+  
+      &.complete {
+        .Task__item {
+          color: rgba(black, .5);
+          text-decoration: line-through;
+        }
+
+        .Task__checkbox {
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+  
+    &__item {
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+  
+      &:not(:last-of-type) {
+        margin: 0 0 16px;
+      }
+  
+      img {
+        width: 18px;
+      }
+
+      // input[type="checkbox"] {
+      //   width: 22px;
+      //   height: 22px;
+      //   margin: 0 22px 0 0;
+
+      //   &:hover {
+      //     cursor: pointer;
+      //   }
+      // }
+    }
+
+    &__button {
+      background: transparent;
+      border: 0;
+      outline: 0;
+      margin-left: auto;
+      padding: 10px;
+      transition: opacity .3s ease;
+
+      &:hover {
+        cursor: pointer;
+        opacity: .5;
+      }
+    }
+  }
+}
